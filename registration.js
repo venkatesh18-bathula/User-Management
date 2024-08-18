@@ -24,7 +24,7 @@ function registerUser() {
         localStorage.setItem('users', JSON.stringify(users));
 
         alert('User registered successfully!');
-        window.location.href = 'login.html';
+        window.location.href = 'index.html';
     }
 }
 
