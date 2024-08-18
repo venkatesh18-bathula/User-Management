@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <style>
+        #form {
+            width: 300px;
+            margin: 0 auto;
+            border: 1px solid black;
+            padding: 30px;
+            padding-right: 50px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+            margin-top: 30px;
+        }
+
+        .form-control {
+            margin-bottom: 10px;
+        }
+
+        .form-control label {
+            display: block;
+        }
+
+        .form-control input, .form-control select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            background-color: #152cb0;
+            color: white;
+            cursor: pointer;
+        }
+
+        .errormssg {
+            color: red;
+            margin-top: 0px;
+        }
+
+        span {
+            color: red;
+        }
+        a{
+            text-decoration: none;
+            color:blue
+        }
+        #pa{
+            font-size: 16px;
+            margin-top: 25px;
+        }
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+
+    </style>
+</head>
+
+<body>
+    <div id="form">
+        <div class="form-control">
+            <label for="name">Name : <span>*</span></label>
+            <input type="text" id="name" name="name">
+            <p class="errormssg" id="nameError"></p>
+        </div>
+        <div class="form-control">
+            <label for="email">Email :<span>*</span></label>
+            <input type="email" id="email" name="email">
+            <p class="errormssg" id="emailError"></p>
+        </div>
+        <div class="form-control">
+            <label for="password">Password : <span>*</span></label>
+            <input type="password" id="password" name="password">
+            <p class="errormssg" id="passwordError"></p>
+        </div>
+        <div class="form-control">
+            <label for="confirmPassword">Confirm Password <span>*</span> </label>
+            <input type="password" id="confirmPassword" name="password">
+            <p class="errormssg" id="confirmPasswordError"></p>
+        </div>
+        <div class="form-control">
+            <label for="role">Role <span>*</span></label>
+            <select id="role" name="role">
+                <option value="">Select</option>
+                <option value="admin">Admin</option>
+                <option value="user">User</option>
+            </select>
+            <p class="errormssg" id="roleError"></p>
+        </div>
+        <div class="form-control">
+            <label for="status">Status</label>
+            <select id="status">
+                <option value="">Select</option>
+                <option value="active">Active</option>
+                <option value="inactive">Inactive</option>
+            </select>
+            <p class="errormssg" id="statusError"></p>
+        </div>
+        <div class="form-control">
+            <button type="button" onclick="registerUser()">Register</button>
+        </div>
+        <p id="pa">Have an account?<a href="login.html">  login</a>   here</p>
+    </div>
+
+    <script src="registration.js"></script>
+</body>
+
+</html>
