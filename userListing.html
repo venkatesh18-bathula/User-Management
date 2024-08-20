@@ -82,8 +82,8 @@
                     <td>${user.role}</td>
                     <td>${user.status}</td>
                     <td>
-                        <span class="action-btn" onclick="viewUser(${user.name})">View</span>
-                        <span class="action-btn" onclick="editUser(${user.name})">Edit</span>`;
+                        <span class="action-btn" onclick="viewUser(${user.id})">View</span>
+                        <span class="action-btn" onclick="editUser(${user.id})">Edit</span>`;
                 
                 var loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
                 if (loggedInUser && loggedInUser.role === 'admin' && user.role !== 'admin') {
