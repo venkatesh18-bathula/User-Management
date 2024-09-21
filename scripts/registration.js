@@ -29,8 +29,13 @@ function registerUser() {
         users.push(userData);
         localStorage.setItem('users', JSON.stringify(users));
 
+<<<<<<< HEAD
         alert('User registered successfully!');
         window.location.href = '../index.html';
+=======
+        alert('User Registered Successfully!');
+        window.location.href = 'index.html';
+>>>>>>> 4ef1ccdb578ee8462a3f0a0f2805f315e1abbbd2
     }
 }
 

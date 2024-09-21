@@ -9,7 +9,7 @@
       },
       {
         "id": 2,
-        "name": "Siya Verma",
+        "name": "Siya Vermaa",
         "email": "siya.verma@example.com",
         "role": "user",
         "status": "inactive"
@@ -30,7 +30,7 @@
       },
       {
         "id": 5,
-        "name": "Ishaan Kumar",
+        "name": "Ishan Kumar",
         "email": "ishaan.kumar@example.com",
         "role": "user",
         "status": "inactive"
