@@ -92,7 +92,10 @@
 
         function loadUserDetails(userId) {
             var users = JSON.parse(localStorage.getItem('users')) || [];
-            var user = users.find(user => user.id == userId);
+            console.log('User ID:', userId);
+console.log('Users from localStorage:', users);
+
+            var user = users.find(user => user.id === Number(userId));
 
             if (user) {
                 document.getElementById('name').textContent = user.name;

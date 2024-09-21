@@ -9,22 +9,28 @@ function registerUser() {
     var isFormValid = validateName(name) && validateEmail(email) && validatePassword(password) &&
         validateConfirmPassword(password, confirmPassword) &&
         validateRole(role) && validateStatus(status);
-
+    
     if (isFormValid) {
+        var users = JSON.parse(localStorage.getItem('users')) || [];
+
+        var newId = users.length > 0 ? users[users.length - 1].id + 1 : 1;
+
         var userData = {
+            id:newId,
             name: name.value,
             email: email.value,
             password: password.value,
             role: role.value,
             status: status.value
         };
+        console.log(userData)
 
-        var users = JSON.parse(localStorage.getItem('users')) || [];
+        // var users = JSON.parse(localStorage.getItem('users')) || [];
         users.push(userData);
         localStorage.setItem('users', JSON.stringify(users));
 
         alert('User registered successfully!');
-        window.location.href = 'index.html';
+        window.location.href = '../index.html';
     }
 }
 

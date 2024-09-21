@@ -62,7 +62,7 @@
         <tbody id="userTableBody">
         </tbody>
     </table>
-    <button><a href="index.html">Back to login</a></button>
+    <button><a href="../index.html">Back to login</a></button>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -71,8 +71,12 @@
 
         function loadUsers() {
             var users = JSON.parse(localStorage.getItem('users')) || [];
+            // console.log(users)
             var userTableBody = document.getElementById('userTableBody');
             userTableBody.innerHTML = '';
+
+            var loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+
 
             users.forEach((user, index) => {
                 var row = `<tr>
@@ -83,19 +87,23 @@
                     <td>${user.status}</td>
                     <td>
                         <span class="action-btn" onclick="viewUser(${user.id})">View</span>
-                        <span class="action-btn" onclick="editUser(${user.id})">Edit</span>`;
+                        <span class="action-btn" onclick="editUser(${user.id})">Edit</span>
+                        <span class="action-btn" onclick="deleteUser(${user.id})">delete</span>
+`;
                 
-                var loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+                // console.log(loggedInUser)
                 if (loggedInUser && loggedInUser.role === 'admin' && user.role !== 'admin') {
                     row += `<span class="action-btn" onclick="deleteUser(${user.id})">Delete</span>`;
                 }
 
                 row += `</td></tr>`;
                 userTableBody.innerHTML += row;
+                console.log("user ud is",user.id)
             });
         }
 
         function viewUser(id) {
+            console.log('User ID being passed:', id);
             window.location.href = `userDetails.html?id=${id}`;
         }
 
