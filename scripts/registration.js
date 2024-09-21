@@ -23,7 +23,7 @@ function registerUser() {
         users.push(userData);
         localStorage.setItem('users', JSON.stringify(users));
 
-        alert('User registered successfully!');
+        alert('User Registered successfully!');
         window.location.href = 'index.html';
     }
 }
