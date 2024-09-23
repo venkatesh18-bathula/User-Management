@@ -31,11 +31,10 @@ function registerUser() {
 
 
         alert('User registered successfully!');
-<<<<<<<< HEAD:files/scripts/registration.js
-        window.location.href = '/files/index.html';
-========
-        window.location.href = '/index.html';
->>>>>>>> 954025a08e1d4f32eb0c30fccf293e281b50b844:filess/scripts/registration.js
+        // window.location.href = '/files/index.html';
+        // window.location.href = '/index.html';
+                window.location.href = '/files/index.html';
+
         
 
     
