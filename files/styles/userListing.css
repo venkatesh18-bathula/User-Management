@@ -1,0 +1,39 @@
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #152cb0;
+    color: white;
+}
+
+.action-btn {
+    margin-right: 10px;
+    cursor: pointer;
+    color: blue;
+}
+
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50; 
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+}
+
+button a {
+    text-decoration: none;
+    color: white;
+}
