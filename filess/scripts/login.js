@@ -25,7 +25,7 @@ function loginUser() {
 
     if (user) {
         alert('Login successful!');
-        window.location.href = './filess/userListing.html';
+        window.location.href = './files/filess/userListing.html';
     } else {
         alert('Invalid email or password');
     }
