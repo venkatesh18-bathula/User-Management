@@ -1,78 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Listing</title>
-    <style>
-        table {
-            width: 80%;
-            margin: 20px auto;
-            border-collapse: collapse;
-        }
-
-        table, th, td {
-            border: 1px solid black;
-        }
-
-        th, td {
-            padding: 10px;
-            text-align: center;
-        }
-
-        th {
-            background-color: #152cb0;
-            color: white;
-        }
-
-        .action-btn {
-            margin-right: 10px;
-            cursor: pointer;
-            color: blue;
-        }
-        
-        button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #4CAF50; 
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-        }
-
-        button a {
-            text-decoration: none;
-            color: white;
-        }
-    </style>
-</head>
-<body>
-    <h1>Users List:</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Role</th>
-                <th>Status</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody id="userTableBody">
-        </tbody>
-    </table>
-    <button><a href="login.html">Back to login</a></button>
-
-    <script>
         document.addEventListener('DOMContentLoaded', () => {
             loadUsers();
         });
 
         function loadUsers() {
             var users = JSON.parse(localStorage.getItem('users')) || [];
+            // console.log(users)
             var userTableBody = document.getElementById('userTableBody');
             userTableBody.innerHTML = '';
+
+            var loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+
 
             users.forEach((user, index) => {
                 var row = `<tr>
@@ -83,19 +20,23 @@
                     <td>${user.status}</td>
                     <td>
                         <span class="action-btn" onclick="viewUser(${user.id})">View</span>
-                        <span class="action-btn" onclick="editUser(${user.id})">Edit</span>`;
+                        <span class="action-btn" onclick="editUser(${user.id})">Edit</span>
+                        <span class="action-btn" onclick="deleteUser(${user.id})">delete</span>
+`;
                 
-                var loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+                // console.log(loggedInUser)
                 if (loggedInUser && loggedInUser.role === 'admin' && user.role !== 'admin') {
                     row += `<span class="action-btn" onclick="deleteUser(${user.id})">Delete</span>`;
                 }
 
                 row += `</td></tr>`;
                 userTableBody.innerHTML += row;
+                console.log("user ud is",user.id)
             });
         }
 
         function viewUser(id) {
+            console.log('User ID being passed:', id);
             window.location.href = `userDetails.html?id=${id}`;
         }
 
@@ -130,6 +71,3 @@
 
 
 // displayAllUsers();
-    </script>
-</body>
-</html>

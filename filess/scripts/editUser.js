@@ -1,108 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit User</title>
-    <style>
-        #form {
-            width: 300px;
-            margin: 0 auto;
-            border: 1px solid black;
-            padding: 30px;
-            padding-right: 50px;
-            border-radius: 10px;
-            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
-            margin-top: 7rem;
-        }
-
-        .form-control {
-            margin-bottom: 10px;
-        }
-
-        .form-control label {
-            display: block;
-        }
-
-        .form-control input,
-        .form-control select {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        button {
-            width: 100%;
-            padding: 10px;
-            border: none;
-            border-radius: 10px;
-            background-color: #152cb0;
-            color: white;
-            cursor: pointer;
-        }
-
-        .errormssg {
-            color: red;
-            margin-top: 0px;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-        }
-
-        a {
-            text-decoration: none;
-            color: blue
-        }
-
-        #pa {
-            font-size: 16px;
-            margin-top: 25px;
-        }
-    </style>
-</head>
-
-<body>
-    <div id="form">
-        <div class="form-control">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name">
-            <p class="errormssg" id="nameError"></p>
-        </div>
-        <div class="form-control">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email">
-            <p class="errormssg" id="emailError"></p>
-        </div>
-        <div class="form-control">
-            <label for="role">Role</label>
-            <select id="role" name="role">
-                <option value="admin">Admin</option>
-                <option value="user">User</option>
-            </select>
-            <p class="errormssg" id="roleError"></p>
-        </div>
-        <div class="form-control">
-            <label for="status">Status</label>
-            <select id="status" name="status">
-                <option value="active">Active</option>
-                <option value="inactive">Inactive</option>
-            </select>
-            <p class="errormssg" id="statusError"></p>
-        </div>
-        <div class="form-control">
-            <button type="button" onclick="updateUser()">Update</button>
-        </div>
-        <p id="pa">also want to?<a href="changePassword.html">  Change Password</a> </p>
-    </div>
-
-    <script>
         document.addEventListener('DOMContentLoaded', () => {
             var urlParams = new URLSearchParams(window.location.search);
             var userId = urlParams.get('id');
@@ -148,6 +43,8 @@
                     window.location.href = 'userListing.html';
                 } else {
                     alert('User not found');
+                    console.log('User ID:', userId, 'Users List:', users);
+
                 }
             }
         }
@@ -200,7 +97,3 @@
                 return true;
             }
         }
-    </script>
-</body>
-
-</html>
